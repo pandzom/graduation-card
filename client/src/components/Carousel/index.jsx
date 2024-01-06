@@ -2,7 +2,6 @@ import SOne from "../../assets/LoginBG.jpg"
 import STwo from "../../assets/meeting.jpg"
 import SThree from "../../assets/backgroundMain.jpg"
 import SFour from "../../assets/sport.jpg"
-import SFive from "../../assets/conference.jpg"
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,31 +16,29 @@ function Carousel() {
             url: SOne,
             heading: "WEDDING VENUES",
             text: "Top Affordable Wedding Venues.",
-            button: "Visit"
+            button: "Visit",
+            href: "/wedding-venues",
         },
         {
             url: STwo,
             heading: "MEETING VENUES",
-            text: "Book your ideal spot for meeting",
-            button: "Visit"
+            text: "Book your ideal spot for a meeting",
+            button: "Visit",
+            href: "/meeting-venues",
         },
         {
             url: SThree,
             heading: "PARTY VENUES",
-            text: "Top places for party",
-            button: "Visit"
+            text: "Top places for a party",
+            button: "Visit",
+            href: "/party-venues",
         },
         {
             url: SFour,
-            heading: "SPORT FACILLITIES",
-            text: "Indoor or outdoor sports facilities ",
-            button: "Visit"
-        },
-        {
-            url: SFive,
-            heading: "CONFERENCE ROOMS",
-            text: "Many hotels, business centers, and co-working spaces.",
-            button: "Visit"
+            heading: "SPORT FACILITIES",
+            text: "Indoor or outdoor sports facilities",
+            button: "Visit",
+            href: "/sport-venues",
         },
     ];
 
@@ -80,7 +77,9 @@ function Carousel() {
                     <h1 className="text-5xl xl:text-7xl font-bold mb-2 text-orange-400 text-center">{slides[currentIndex].heading}</h1>
                     <p className="text-2xl xl:text-3xl  text-white text-center mt-8">{slides[currentIndex].text}</p>
                     <div className='flex justify-center mt-8'>
-                    <button type="button" class="font-aycfont text-white bg-black hover:duration-700 dark:focus:ring-aycolor shadow-lg shadow-aycolor dark:shadow-lg dark:shadow-aycolor font-medium rounded-lg text-sm px-10 py-5 text-center">{slides[currentIndex].button}</button>
+                    <a href={slides[currentIndex].href} className="text-white bg-black hover:duration-700 dark:focus:ring-orange-600 shadow-lg shadow-orange-700 dark:shadow-lg dark:shadow-aycolor font-medium rounded-lg text-sm px-10 py-5 text-center">
+                            {slides[currentIndex].button}
+                        </a>
                     </div>
                 </div>
             </div>
