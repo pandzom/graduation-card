@@ -1,11 +1,14 @@
 import ProfileCard from "../../ProfileCard";
-import Wedding1 from "../../assets/wedding1.png";
-import Wedding2 from "../../assets/wedding2.png";
-import Wedding3 from "../../assets/wedding3.png";
+import Party1 from "../../assets/party1.png";
+import Party2 from "../../assets/party2.png";
+import Party3 from "../../assets/party3.png";
+import Party4 from "../../assets/party4.png";
+import Party5 from "../../assets/party5.png";
+
 
 function Party() {
   return (
-      <div className="bg-gradient-to-r from-amber-300 to-amber-500">
+      <div className="bg-gradient-to-r from-violet-400 to-violet-700">
           <section className='hero bg-primary text-black '>
               <div className='hero-body'>
                   <h1 className='text-4xl font-bold text-center pt-5'>Party Venues</h1>
@@ -20,7 +23,7 @@ function Party() {
                           <ProfileCard
                               title="VenueName1"
                               handle="EventLocation1"
-                              image={Wedding1}
+                              image={Party1}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />
@@ -29,7 +32,7 @@ function Party() {
                           <ProfileCard
                               title="VenueName2"
                               handle="EventLocation2"
-                              image={Wedding2}
+                              image={Party2}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />
@@ -40,16 +43,16 @@ function Party() {
                           <ProfileCard
                               title="VenueName3"
                               handle="EventLocation3"
-                              image={Wedding3}
+                              image={Party3}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />
                       </div>
                       <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName3"
-                              handle="EventLocation3"
-                              image={Wedding3}
+                              title="VenueName4"
+                              handle="EventLocation4"
+                              image={Party4}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />
@@ -58,9 +61,9 @@ function Party() {
                     <div className="lg:flex justify-center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName3"
-                              handle="EventLocation3"
-                              image={Wedding3}
+                              title="VenueName5"
+                              handle="EventLocation5"
+                              image={Party5}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />

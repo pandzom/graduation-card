@@ -1,11 +1,13 @@
 import ProfileCard from "../../ProfileCard";
-import Wedding1 from "../../assets/wedding1.png";
-import Wedding2 from "../../assets/wedding2.png";
-import Wedding3 from "../../assets/wedding3.png";
+import Meeting1 from "../../assets/meeting1.png";
+import Meeting2 from "../../assets/meeting2.png";
+import Meeting3 from "../../assets/meeting3.png";
+import Meeting4 from "../../assets/meeting4.png";
+import Meeting5 from "../../assets/meeting5.png";
 
 function Meeting() {
   return (
-      <div className="bg-gradient-to-r from-amber-300 to-amber-500">
+      <div className="bg-gradient-to-r from-slate-400 to-slate-700">
           <section className='hero bg-primary text-black '>
               <div className='hero-body'>
                   <h1 className='text-4xl font-bold text-center pt-5'>Meeting Venues</h1>
@@ -20,7 +22,7 @@ function Meeting() {
                           <ProfileCard
                               title="VenueName1"
                               handle="EventLocation1"
-                              image={Wedding1}
+                              image={Meeting1}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />
@@ -29,7 +31,7 @@ function Meeting() {
                           <ProfileCard
                               title="VenueName2"
                               handle="EventLocation2"
-                              image={Wedding2}
+                              image={Meeting2}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />
@@ -40,16 +42,16 @@ function Meeting() {
                           <ProfileCard
                               title="VenueName3"
                               handle="EventLocation3"
-                              image={Wedding3}
+                              image={Meeting3}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />
                       </div>
                       <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName3"
-                              handle="EventLocation3"
-                              image={Wedding3}
+                              title="VenueName4"
+                              handle="EventLocation4"
+                              image={Meeting4}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />
@@ -58,9 +60,9 @@ function Meeting() {
                     <div className="lg:flex justify-center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName3"
-                              handle="EventLocation3"
-                              image={Wedding3}
+                              title="VenueName5"
+                              handle="EventLocation5"
+                              image={Meeting5}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />
