@@ -6,6 +6,8 @@ import Wedding from "./components/Wedding";
 import Meeting from "./components/Meeting";
 import Party from "./components/Party";
 import Sport from "./components/Sport";
+import AllVenues from "./components/AllVenues";
+
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
 			<Route path="/meeting-venues" exact element={<Meeting />} />
 			<Route path="/party-venues" exact element={<Party />} />
 			<Route path="/sport-venues" exact element={<Sport />} />
+			<Route path="/all-venues" exact element={<AllVenues />} />
 		</Routes>
 	);
 }

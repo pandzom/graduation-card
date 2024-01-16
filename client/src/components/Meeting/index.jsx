@@ -20,7 +20,7 @@ function Meeting() {
                     <div className="lg:flex justify center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName1"
+                              title="Meeting1"
                               handle="EventLocation1"
                               image={Meeting1}
                               description1="Capacity"
@@ -29,7 +29,7 @@ function Meeting() {
                       </div>
                       <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName2"
+                              title="Meeting2"
                               handle="EventLocation2"
                               image={Meeting2}
                               description1="Capacity"
@@ -40,7 +40,7 @@ function Meeting() {
                     <div className="lg:flex justify-center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName3"
+                              title="VMeeting"
                               handle="EventLocation3"
                               image={Meeting3}
                               description1="Capacity"
@@ -49,7 +49,7 @@ function Meeting() {
                       </div>
                       <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName4"
+                              title="Meeting4"
                               handle="EventLocation4"
                               image={Meeting4}
                               description1="Capacity"
@@ -60,7 +60,7 @@ function Meeting() {
                     <div className="lg:flex justify-center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName5"
+                              title="Meeting5"
                               handle="EventLocation5"
                               image={Meeting5}
                               description1="Capacity"

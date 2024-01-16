@@ -20,7 +20,7 @@ function Wedding() {
                     <div className="lg:flex justify center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName1"
+                              title="Wedding1"
                               handle="EventLocation1"
                               image={Wedding1}
                               description1="Capacity"
@@ -29,7 +29,7 @@ function Wedding() {
                       </div>
                       <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName2"
+                              title="Wedding2"
                               handle="EventLocation2"
                               image={Wedding2}
                               description1="Capacity"
@@ -40,7 +40,7 @@ function Wedding() {
                     <div className="lg:flex justify-center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName3"
+                              title="Wedding3"
                               handle="EventLocation3"
                               image={Wedding3}
                               description1="Capacity"
@@ -49,7 +49,7 @@ function Wedding() {
                       </div>
                       <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName4"
+                              title="Wedding4"
                               handle="EventLocation4"
                               image={Wedding4}
                               description1="Capacity"
@@ -60,7 +60,7 @@ function Wedding() {
                     <div className="lg:flex justify-center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName5"
+                              title="Wedding5"
                               handle="EventLocation5"
                               image={Wedding5}
                               description1="Capacity"

@@ -21,16 +21,16 @@ function Party() {
                     <div className="lg:flex justify center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName1"
+                              title="Party1"
                               handle="EventLocation1"
                               image={Party1}
                               description1="Capacity"
                               description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                           />
-                      </div>
+                      </div>    
                       <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName2"
+                              title="Party2"
                               handle="EventLocation2"
                               image={Party2}
                               description1="Capacity"
@@ -41,7 +41,7 @@ function Party() {
                     <div className="lg:flex justify-center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName3"
+                              title="Party3"
                               handle="EventLocation3"
                               image={Party3}
                               description1="Capacity"
@@ -50,7 +50,7 @@ function Party() {
                       </div>
                       <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName4"
+                              title="Party4"
                               handle="EventLocation4"
                               image={Party4}
                               description1="Capacity"
@@ -61,7 +61,7 @@ function Party() {
                     <div className="lg:flex justify-center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName5"
+                              title="Party5"
                               handle="EventLocation5"
                               image={Party5}
                               description1="Capacity"

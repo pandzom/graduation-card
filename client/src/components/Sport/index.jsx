@@ -21,7 +21,7 @@ function Sport() {
                     <div className="lg:flex justify center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName1"
+                              title="Sport1"
                               handle="EventLocation1"
                               image={Sport1}
                               description1="Capacity"
@@ -30,7 +30,7 @@ function Sport() {
                       </div>
                       <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName2"
+                              title="Sport2"
                               handle="EventLocation2"
                               image={Sport2}
                               description1="Capacity"
@@ -41,7 +41,7 @@ function Sport() {
                     <div className="lg:flex justify-center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName3"
+                              title="Sport3"
                               handle="EventLocation3"
                               image={Sport3}
                               description1="Capacity"
@@ -50,7 +50,7 @@ function Sport() {
                       </div>
                       <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName4"
+                              title="Sport4"
                               handle="EventLocation4"
                               image={Sport4}
                               description1="Capacity"
@@ -61,7 +61,7 @@ function Sport() {
                     <div className="lg:flex justify-center">
                     <div className='w-full md:w-1/3 lg:w-3/6 p-4'>
                           <ProfileCard
-                              title="VenueName5"
+                              title="Sport5"
                               handle="EventLocation5"
                               image={Sport5}
                               description1="Capacity"
