@@ -7,6 +7,7 @@ import Meeting from "./components/Meeting";
 import Party from "./components/Party";
 import Sport from "./components/Sport";
 import AllVenues from "./components/AllVenues";
+import DescriptionCard from "./components/DescriptionCard";
 
 
 
@@ -24,6 +25,7 @@ function App() {
 			<Route path="/party-venues" exact element={<Party />} />
 			<Route path="/sport-venues" exact element={<Sport />} />
 			<Route path="/all-venues" exact element={<AllVenues />} />
+			<Route path="/partyonedescription" exact element={<DescriptionCard />} />
 		</Routes>
 	);
 }

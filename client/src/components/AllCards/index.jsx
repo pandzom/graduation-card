@@ -1,5 +1,6 @@
 import React from "react";
 import ProfileCard from "../../ProfileCard";
+import { Link } from "react-router-dom";
 import Meeting1 from "../../assets/meeting1.png";
 import Meeting2 from "../../assets/meeting2.png";
 import Meeting3 from "../../assets/meeting3.png";
@@ -61,7 +62,7 @@ function AllCards() {
               </div>
             </div>
             <div className="lg:flex justify center">
-              <div className="w-full md:w-1/3 lg:w-3/6 p-4">
+              <Link to="/partyonedescription" className="w-full md:w-1/3 lg:w-3/6 p-4">
                 <ProfileCard
                   title="Party1"
                   handle="EventLocation1"
@@ -69,7 +70,7 @@ function AllCards() {
                   description1="Capacity"
                   description2="Inside Vineyard Elegance the warm and inviting interior seamlessly blends rustic charm with refined elegance"
                 />
-              </div>
+              </Link >
               <div className="w-full md:w-1/3 lg:w-3/6 p-4">
                 <ProfileCard
                   title="Party2"
