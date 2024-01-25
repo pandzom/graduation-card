@@ -14,8 +14,8 @@ app.use(
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY)
 
 const storeItems = new Map([
-  [1, { priceInCents: 10000, name: "Learn React Today" }],
-  [2, { priceInCents: 20000, name: "Learn CSS Today" }],
+  [1, { priceInCents: 300000, name: "Venue" }],
+  [2, { priceInCents: 50000, name: "Selected package" }],
 ])
 
 app.post("/create-checkout-session", async (req, res) => {
@@ -36,8 +36,8 @@ app.post("/create-checkout-session", async (req, res) => {
           quantity: item.quantity,
         }
       }),
-      success_url: `${process.env.CLIENT_URL}/success.jsx`,
-      cancel_url: `${process.env.CLIENT_URL}/cancel.jsx`,
+      success_url: `${process.env.CLIENT_URL}`,
+      cancel_url: `${process.env.CLIENT_URL}`,
     })
     res.json({ url: session.url })
   } catch (e) {

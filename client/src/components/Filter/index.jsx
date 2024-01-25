@@ -16,11 +16,6 @@ const Filter = () => {
         {renderFilter("PRICE", faMoneyCheckDollar, "$$$$$$$$$", "20vh")}
         {renderFilter("LOCATION", faMapLocationDot, "Sarajevo", "10vh")}
       </div>
-      <div className="flex justify-center mt-5">
-        <button className="text-white transition ease-in-out delay-150 rounded-lg bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-600 duration-300 text-sm lg:text-lg px-20 py-2">
-          Search
-        </button>
-  </div>
     </div>
   );
 };

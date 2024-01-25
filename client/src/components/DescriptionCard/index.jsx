@@ -1,111 +1,245 @@
-import React, { useEffect } from 'react';
-import { FaMapMarkerAlt } from 'react-icons/fa';
-import { IoMdPerson } from 'react-icons/io';
-import Party1 from '../../assets/party1.png';
+import React, { useEffect, useState } from "react";
+import { FaMapMarkerAlt, FaDollarSign } from "react-icons/fa";
+import { IoMdPerson } from "react-icons/io";
+import { TbDimensions } from "react-icons/tb";
+import { FiWifi } from "react-icons/fi";
+import { AiOutlineCar } from "react-icons/ai";
+import { MdOutlineWorkspacePremium } from "react-icons/md";
+import Calendar from "../Calendar/calendarComponent";
+import Carousel from "../Carousel/indexSecond";
 
+function DescriptionVenueCard({
+  title,
+  handle,
+  image,
+  description1,
+  description2,
+}) {
+  const [selectedCard, setSelectedCard] = useState(null);
 
-function DescriptionVenueCard({ title, handle, image, description1, description2 }) {
-    useEffect(() => {
-        const button = document.querySelector("button");
+  useEffect(() => {
+    const button = document.querySelector("button");
 
-        if (button) {
-            button.addEventListener("click", () => {
-                fetch("http://localhost:5500/create-checkout-session", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        items: [
-                            { id: 1, quantity: 3 },
-                            { id: 2, quantity: 1 },
-                        ],
-                    }),
-                })
-                    .then(res => {
-                        if (res.ok) return res.json()
-                        return res.json().then(json => Promise.reject(json))
-                    })
-                    .then(({ url }) => {
-                        window.location = url
-                    })
-                    .catch(e => {
-                        console.error(e.error)
-                    })
-            });
-        }
+    if (button) {
+      button.addEventListener("click", () => {
+        // Handle payment logic based on the selected card (Silver, Gold, or Platinum)
+        // You can use the selectedCard state to determine the selected option
+        // Example: if (selectedCard === 'Silver') { /* handle Silver payment */ }
+      });
+    }
 
-        // Cleanup the event listener when the component unmounts
-        return () => {
-            if (button) {
-                button.removeEventListener("click", () => { });
-            }
-        };
-    }, []); // The empty dependency array ensures the effect runs only once after the initial render
+    return () => {
+      if (button) {
+        button.removeEventListener("click", () => {});
+      }
+    };
+  }, [selectedCard]);
 
-    return (
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden lg:ml-16 lg:mr-16">
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+  };
+
+  useEffect(() => {
+    const button = document.querySelector("button");
+
+    if (button) {
+      button.addEventListener("click", () => {
+        fetch("http://localhost:5500/create-checkout-session", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            items: [
+              { id: 1, quantity: 1 },
+              { id: 2, quantity: 1 },
+            ],
+          }),
+        })
+          .then((res) => {
+            if (res.ok) return res.json();
+            return res.json().then((json) => Promise.reject(json));
+          })
+          .then(({ url }) => {
+            window.location = url;
+          })
+          .catch((e) => {
+            console.error(e.error);
+          });
+      });
+    }
+    return () => {
+      if (button) {
+        button.removeEventListener("click", () => {});
+      }
+    };
+  }, []);
+
+  return (
+    <div className="bg-gradient-to-r from-cyan-300 to-purple-500 absolute lg:w-[210vh]">
+      <div className="bg-gradient-to-r from-purple-400 to-blue-200 shadow-lg rounded-lg overflow-hidden lg:m-24">
         <div className="relative h-80 w-full">
-            <img className="absolute h-full w-full object-cover" src={Party1} alt="pda logo" />
+          <div className="ml-1 lg:ml-0 w-96 lg:w-full">
+            <Carousel />
+          </div>
         </div>
         <div className="lg:flex lg:justify-center">
-            <div className="p-4 lg:w-[100vh] lg:ml-20">
-                <div className="mb-2">
-                    <p className="text-xl font-bold">VenueName</p>
-                    <div className="flex">
-                        <FaMapMarkerAlt size={20} color="gray" />
-                        <p className="text-gray-600 pl-4">Location</p>
-                    </div>
-                </div>
-                <div className="flex">
-                    <IoMdPerson size={20} color="gray" />
-                    <div className="text-gray-800 pl-4">
-                        <text>capacity</text>
-                    </div>
-                </div>
-                <div className="text-gray-800 pt-2">
-                    <tex>This place for parties and other celebrations is well equipped for such events.</tex>
-                </div>
+          <div className="p-4 lg:w-[100vh] lg:ml-20">
+            <div className="mb-2">
+              <p className="text-4xl font-bold mt-36">
+                Enchanted Garden Lounge
+              </p>
+              <div className="flex mt-5">
+                <FaMapMarkerAlt size={20} color="blue" />
+                <p className="text-gray-600 pl-4">Bugojno</p>
+              </div>
             </div>
-            <div className="pl-4 mb-2 lg:pt-4 lg:w-[100vh] lg:mr-20">
-                <text>The party venue is a vibrant and energetic space, adorned with colorful decorations and lively ambiance that sets the perfect tone for celebration. As you step inside, the rhythmic beats of music fill the air, creating an inviting atmosphere that promises a night of joy and festivity. The venue's spacious layout allows for seamless movement, encouraging guests to mingle and engage in conversations. A kaleidoscope of lights dances across the walls, adding a touch of glamour to the festivities.</text>
+            <div className="flex">
+              <IoMdPerson size={20} color="blue" />
+              <div className="text-gray-800 pl-4">
+                <text>40 persons</text>
+              </div>
             </div>
+            <div className="flex mt-2">
+              <FaDollarSign size={22} color="blue" />
+              <div className="text-gray-800 flex ">
+                <h1 className="ml-3">100 BAM(per day)</h1>
+              </div>
+            </div>
+            <div className="flex mt-2">
+              <TbDimensions size={35} color="blue" />
+              <div className="text-gray-800 flex ">
+                <h1 className="ml-3 mt-2">
+                  55m<sup>2</sup>
+                </h1>
+              </div>
+            </div>
+            <div className="flex mt-2">
+              <FiWifi size={35} color="blue" />
+              <div className="text-gray-800 flex ">
+                <h1 className="ml-3 mt-2">Free Wi-Fi</h1>
+              </div>
+            </div>
+
+            <div className="flex mt-2">
+              <AiOutlineCar size={28} color="blue" />
+              <div className="text-gray-800 flex">
+                <h1 className="ml-3">Ample Parking Space</h1>
+              </div>
+            </div>
+          </div>
+          <div className="pl-4 mt-14 lg:pt-32 lg:w-[100vh] lg:mr-20">
+            <p className="font-mono">
+              The vibrant party venue is a sensory delight, with an array of
+              captivating sights and sounds that elevate the celebration to new
+              heights. The walls are adorned with dynamic, eye-catching
+              decorations that echo the theme of the event, creating a visually
+              stunning backdrop for memorable moments. The lively ambiance is
+              further enhanced by the enthusiastic chatter of guests and the
+              clinking of glasses, creating a symphony of excitement. The
+              rhythmic beats of the music not only fill the air but also
+              resonate with the pulsating energy of the crowd. The carefully
+              curated playlist ensures that every note contributes to the
+              overall euphoria, inspiring spontaneous dance moves and infectious
+              smiles. The dance floor becomes a focal point where guests express
+              themselves through movement, adding an extra layer of joy to the
+              festivities.
+            </p>
+          </div>
         </div>
-        <div className="lg:flex lg:justify-center lg:space-x-40 p-4 space-y-4  lg:space-y-0">
-            <div className="lg:size-56 border-2 h-40 rounded bg-stone-200">
-            <p className="text-xl font-bold text-center">SILVER</p>
-            <p className="text-gray-600 pl-4 pt-2">Venue rental for 6 hours</p>
-            <p className="text-gray-600 pl-4 pt-2">Basic event coordination</p>
-            <p className="text-gray-600 pl-4 pt-2">Standard lighting</p>
-            <p className="text-gray-600 pl-4 pt-2">Standard packet</p>
+        <h1 className="text-center text-3xl mt-10 font-bold">Choose packet</h1>
+        <div className="lg:flex lg:justify-center lg:space-x-8 p-4 space-y-4 lg:space-y-0 lg:mt-10">
+          <div
+            className={`lg:w-64 bg-white border-2 h-40 rounded-lg shadow-md cursor-pointer transition-colors duration-300 transform hover:scale-105 ${
+              selectedCard === "Silver"
+                ? "border-stone-300 bg-stone-300"
+                : "border-gray-300"
+            }`}
+            onClick={() => handleCardClick("Silver")}
+          >
+            <div className="flex justify-center">
+              <p className="text-xl font-bold font-mono text-center text-gray-800">
+                SILVER
+              </p>
+              <MdOutlineWorkspacePremium size={25} color="gray" />
             </div>
-            <div className="lg:size-56 border-2 h-40 rounded bg-yellow-200"> 
-            <p className="text-xl font-bold text-center">GOLD</p>
-            <p className="text-gray-600 pl-4 pt-2">Upgrade decor option</p>
-            <p className="text-gray-600 pl-4 pt-2">Wi-fi</p>
-            <p className="text-gray-600 pl-4 pt-2">Premium lighting options</p>
-            <p className="text-gray-600 pl-4 pt-2">Smoke show</p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">
+              Venue rental for 6 hours
+            </p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">
+              Basic event coordination
+            </p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">
+              Standard lighting
+            </p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">Standard packet</p>
+          </div>
+
+          <div
+            className={`lg:w-64 bg-white border-2 h-40 font-mono rounded-lg shadow-md cursor-pointer transition-colors hover:bg-yellow-200 duration-300 transform hover:scale-105 ${
+              selectedCard === "Gold"
+                ? "border-yellow-200 bg-yellow-200"
+                : "border-gray-300"
+            }`}
+            onClick={() => handleCardClick("Gold")}
+          >
+            <div className="flex justify-center">
+              <p className="text-xl font-bold font-mono text-center text-gray-800">
+                GOLD
+              </p>
+              <MdOutlineWorkspacePremium size={25} color="yellow" />
             </div>
-            <div className="lg:size-56 border-2 h-40 rounded bg-stone-300">
-            <p className="text-xl font-bold text-center">PLATINUM</p>
-            <p className="text-gray-600 pl-4 pt-2">Full service event coordination</p>
-            <p className="text-gray-600 pl-4 pt-2">Firework show</p>
-            <p className="text-gray-600 pl-4 pt-2">Customized decor</p>
-            <p className="text-gray-600 pl-4 pt-2">Different performers</p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">
+              Upgrade decor option
+            </p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">Wi-fi</p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">
+              Premium lighting options
+            </p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">Smoke show</p>
+          </div>
+
+          <div
+            className={`lg:w-64 bg-white border-2 h-40 rounded-lg shadow-md cursor-pointer transition-colors hover:bg-yellow-400 duration-300 transform hover:scale-105 ${
+              selectedCard === "Platinum"
+                ? "border-yellow-500 bg-yellow-400"
+                : "border-gray-300"
+            }`}
+            onClick={() => handleCardClick("Platinum")}
+          >
+            <div className="flex justify-center">
+              <p className="text-xl font-bold font-mono text-center text-gray-800">
+                PLATINUM
+              </p>
+              <MdOutlineWorkspacePremium size={25} color="red" />
             </div>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">
+              Event coordination
+            </p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">Firework show</p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">
+              Customized decor
+            </p>
+            <p className="text-gray-600 pl-4 pt-2 font-mono">
+              Different performers
+            </p>
+          </div>
         </div>
-        <div className=" flex justify-center p-5 b">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-6 px-16 rounded ">
-                <text>Pay Now</text>
-            </button>
+        <div className="div">
+          <Calendar />
+          <h1 className=" text-center text-gray-500">
+            In order to complete your payment you need to concduct payment
+          </h1>
         </div>
+
+        <div className=" flex justify-center p-5">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-6 px-16 rounded ">
+            <text>Pay Now</text>
+          </button>
+        </div>
+      </div>
     </div>
-    );
+  );
 }
 
 export default DescriptionVenueCard;
-
-
-
-
-
